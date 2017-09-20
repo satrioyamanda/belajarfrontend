@@ -18,25 +18,19 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <img id="gambar" src="res/img/img1.jpg" alt="">
-  <button>Ganti Gambar 1</button>
-  <button>Ganti Gambar 2</button>
-  <button>Ganti Gambar 3</button>
+  <div>
+    <h1 id="judul">Hello World</h1>
+    <input id="edit-judul" type="text">
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    (function () {
-      var
-        gambar = document.getElementById('gambar'),
-        tombol = document.getElementsByTagName('button'),
-        max = tombol.length;
-
-      for (var x = 0; x < max+1; x++) {
-        tombol[x].addEventListener('click', function () {
-          for (var i = 1; i < max; i++) {
-            gambar.setAttribute('src', 'res/img/img' + [i] + '.jpg');
-          }
-        })
-      };
-    })();
+    (function(){
+      $(document).ready(function(){
+        $('#edit-judul').on('keyup', function(){
+          $('#judul').text($('#edit-judul').val());
+        });
+      });
+    })()
   </script>
 </body>
 

@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;  
 }
 
 a {
@@ -29,7 +30,7 @@ a {
   width: 100%;
   z-index: 700;
   zoom: 1;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.2)
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1)
 }
 
 .site-header:before {
@@ -51,13 +52,14 @@ a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin: 12px;
+  margin: 8px;
 }
 
 .site-nav-top {
   position: absolute;
   right: 0;
-  top: 4px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .site-nav-top ul {
@@ -76,7 +78,7 @@ a {
   padding-left: 12px;
   padding-right: 12px;
   letter-spacing: 1px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .menu-item-has-children > a:hover {
@@ -114,7 +116,7 @@ a {
   background-color: #fff;
 }
 
-.menu-item-child a {
+.menu-item-child li a {
   display: block;
   color: #555;
   font-weight: normal;
@@ -133,6 +135,22 @@ a {
 .menu-item-child-list {
   width: 160px;
   float: left;
+  border-right: 1px solid #dedede;
+}
+
+.menu-item-child-list li {
+  position: relative;
+}
+
+.menu-item-child-list li:hover::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 1px solid #dedede;
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-6px) rotate(45deg);
 }
 
 .menu-item-child-content {
@@ -144,15 +162,18 @@ a {
 .item-link {
   display: block;
   width: 100px;
-  height: 100px;
-  margin: 4px;
+  height: 70px;
+  margin: 8px;
   float: left;
-  background-color: #999;
 }
 
 .item-image {
-  max-width: 100%;
-  width: fit-content;
+  width: 100%;
+  display: block;
+}
+
+.item-image:hover {
+  opacity: 0.9;
 }
 
 .main-nav {
@@ -203,7 +224,6 @@ a {
   float: left;
   width: 50%;
   padding: 8px;
-  border-radius: 4px;
 }
 
 .main-nav-child li:hover {
@@ -218,7 +238,6 @@ a {
 .icon-wrapper {
   background-color: #fff;
   padding: 8px;
-  border-radius: 4px;
 }
 
 .icon-wrapper:before {
@@ -268,7 +287,7 @@ a {
 }
 
 .site-main {
-  margin-top: 60px;
+  margin-top: 48px;
 }
 
 .hidden {

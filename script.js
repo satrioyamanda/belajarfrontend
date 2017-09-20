@@ -18,9 +18,17 @@ for (var x = 0; x < specialLinks.length; x++) {
   specialLinks[x].addEventListener("mouseover", retrieve, true);
 
   function retrieve(e) {
-    for (var i = 0; i < document.querySelectorAll(".item-link").length; i++) {
+    for (var i = 0; i < maxLength; i++) {
       itemLink[i].setAttribute('href', e.target.getAttribute("data-url-" + i));
       itemImage[i].setAttribute('src', e.target.getAttribute("data-img-" + i));
     }
   }
 }
+
+// specialLinks.each(function(i) {
+//   $(this)[i].on('mouseover', retrieve);
+//   function retrieve(e) {
+//     itemLink[i].attr('href', e.target.getAttribute("data-url-" + i));
+//     itemImage[i].attr('src', e.target.getAttribute("data-img-" + i));
+//   }
+// })
